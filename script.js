@@ -1,1 +1,5 @@
-console.log('Guess Who?')
+function toggleEliminated(element) {
+    return element.classList.toggle('eliminated')
+}
+
+
