@@ -53,6 +53,10 @@ let cards = [
         image: 'characters_12.jpg'
     },
     {
+        name: 'Emiko',
+        image: 'characters_13.jpg'
+    },
+    {
         name: 'Ayumi',
         image: 'characters_14.jpg'
     },
@@ -83,13 +87,22 @@ let cards = [
 ]
 
 function selectRandomCard() {
-let i = Math.floor(Math.random()*19) 
-let mysteryCardName = document.querySelector('.Mystery-Card span')
-let mysteryImage = document.querySelector('img.Mystery')
-mysteryCardName.innerHTML = cards[i].name  
-mysteryImage.src = 'images/' + cards[i].image  
-
+    let i = Math.floor(Math.random()*20) 
+    let mysteryCardName = document.querySelector('.Mystery-Card span')
+    let mysteryImage = document.querySelector('img.Mystery')
+        mysteryCardName.innerHTML = cards[i].name  
+        mysteryImage.src = 'images/' + cards[i].image  
 } 
-console.log(selectRandomCard())
+selectRandomCard()
 
+function populateCards() {
+    let cardTo = document.querySelector('.cards')
+    for (let i = 0; i < cards.length; i++) {
+                cardTo.innerHTML = cardTo.innerHTML + `<div class="card">
+                                    <img src="images/${cards[i].image}"/>
+                                    <span>${cards[i].name}</span>
+                                    </div>`
+    }
+}
+populateCards()
 
